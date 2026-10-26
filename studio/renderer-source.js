@@ -24,7 +24,7 @@ export class CarRenderer{
   this.reflection=new Reflector(new THREE.PlaneGeometry(80,80),{textureWidth:innerWidth<650?256:512,textureHeight:innerWidth<650?256:512,color:0x5c6265,clipBias:.003});this.reflection.rotation.x=-Math.PI/2;this.reflection.position.y=-.025;this.reflection.visible=!this.low;this.scene.add(this.reflection);
   this.road=this.makeRoad();this.scene.add(this.road);
   this.tunnel=this.makeTunnel();this.scene.add(this.tunnel);
-  this.car=new THREE.Group();this.scene.add(this.car);this.glows=[];this.makeHeadlights();
+  this.car=new THREE.Group();this.scene.add(this.car);this.glows=[];this.headlightBeams=[];this.makeHeadlights();
   this.resize();this.lastState=null;
  }
  makeRoad(){
@@ -42,7 +42,7 @@ export class CarRenderer{
  }
  makeHeadlights(){
   const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d');const grad=x.createRadialGradient(32,32,0,32,32,32);grad.addColorStop(0,'rgba(230,242,255,.65)');grad.addColorStop(.15,'rgba(205,230,255,.24)');grad.addColorStop(1,'rgba(205,230,255,0)');x.fillStyle=grad;x.fillRect(0,0,64,64);const map=new THREE.CanvasTexture(c);
-  for(const side of [-1,1]){const mat=new THREE.SpriteMaterial({map,color:0xeef8ff,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending});const sprite=new THREE.Sprite(mat);sprite.position.set(-1.94,.48,side*.49);sprite.scale.set(.7,.7,1);this.car.add(sprite);this.glows.push(sprite);}
+  for(const side of [-1,1]){const mat=new THREE.SpriteMaterial({map,color:0xeef8ff,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending});const sprite=new THREE.Sprite(mat);sprite.position.set(-1.94,.48,side*.49);sprite.scale.set(.7,.7,1);this.car.add(sprite);this.glows.push(sprite);const beam=new THREE.SpotLight(0xe4efff,0,12,.3,.65,1.4);beam.position.copy(sprite.position);beam.target.position.set(-7,.05,side*.6);this.car.add(beam,beam.target);this.headlightBeams.push(beam);}
  }
  async load(onProgress){
   const draco=new DRACOLoader();draco.setDecoderPath('../vendor/draco/');draco.setDecoderConfig({type:'wasm'});
@@ -53,7 +53,7 @@ export class CarRenderer{
   this.paint=[];this.lamps=[];this.model.traverse(o=>{if(!o.isMesh)return;for(const m of (Array.isArray(o.material)?o.material:[o.material])){if(['マテリアル.030','マテリアル.029','マテリアル.024'].includes(m.name)&&!this.paint.includes(m))this.paint.push(m);if(/headlight|light_F|LED/i.test(o.name)&&m.emissive&&!this.lamps.includes(m))this.lamps.push(m);}});this.loaded=true;this.canvas.dataset.modelReady='true';draco.dispose();if(this.lastState)this.render(this.lastState);
  }
  resize(){
-  this.w=innerWidth;this.h=innerHeight;this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,this.low?1.15:1.6));this.renderer.setSize(this.w,this.h,false);this.camera.aspect=this.w/this.h;this.camera.clearViewOffset();this.camera.updateProjectionMatrix();if(this.lastState)this.render(this.lastState);
+  this.w=this.canvas.clientWidth||innerWidth;this.h=this.canvas.clientHeight||innerHeight;this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,this.low?1.15:1.6));this.renderer.setSize(this.w,this.h,false);this.camera.aspect=this.w/this.h;this.camera.clearViewOffset();this.camera.updateProjectionMatrix();if(this.lastState)this.render(this.lastState);
  }
  render(s){
   this.lastState=s;if(!this.loaded)return;
@@ -63,11 +63,11 @@ export class CarRenderer{
   const box=close?[[-1.69,-.03,.44],[-1.06,.58,.91]]:[[-2.08,-.03,-.86],[1.51,1.04,.88+Math.abs(s.doorAngle)*.75]];
   const desired=aspect<.9?.9:.64,tan=Math.tan(THREE.MathUtils.degToRad(this.camera.fov/2));let distance=0;
   for(const x of [box[0][0],box[1][0]])for(const y of [box[0][1],box[1][1]])for(const z of [box[0][2],box[1][2]]){const offset=new THREE.Vector3(x,y,z).sub(focus);distance=Math.max(distance,offset.dot(direction)+Math.abs(offset.dot(right))/(tan*aspect*desired));}
-  distance=THREE.MathUtils.lerp(distance,baseDistance,s.cockpit);
+  const ease=v=>{const t=clamp(v);return t*t*(3-2*t);};const detailZoom=ease((s.p-.515)/.035)*(1-ease((s.p-.61)/.05));distance=THREE.MathUtils.lerp(distance,baseDistance,Math.max(s.cockpit,detailZoom));
   this.camera.position.copy(focus).addScaledVector(direction,distance);this.camera.lookAt(focus);this.camera.updateMatrixWorld();
   if(s.orbit){this.camera.position.fromArray(s.camera);this.camera.lookAt(...s.target);this.camera.updateMatrixWorld();}this.door.rotation.y=s.doorAngle;for(const wheel of this.wheels)if(wheel)wheel.rotation.z=s.wheelAngle;
   this.key.intensity=.12+s.light*3;this.scene.environmentIntensity=.15+s.light*1.25;
-  for(const glow of this.glows)glow.material.opacity=s.headlights===false?0:s.light*.5;for(const m of this.lamps)m.emissiveIntensity=s.headlights===false?0:1;
+  for(const glow of this.glows)glow.material.opacity=s.headlights===false?0:s.light*.5;for(const m of this.lamps)m.emissiveIntensity=s.headlights===false?0:1;for(const beam of this.headlightBeams)beam.intensity=s.headlights===false?0:s.light*2.8;
   this.tunnel.visible=s.tunnel>.005;this.tunnel.position.x=clamp((s.p-.66)/.20)*30;for(const m of this.tunnelMaterials)m.opacity=s.tunnel;
   this.road.material.opacity=s.tunnel*.86;this.roadTexture.offset.y=s.road*.5;
   this.canvas.dataset.doorAngle=s.doorAngle.toFixed(5);this.canvas.dataset.wheelAngle=s.wheelAngle.toFixed(5);
