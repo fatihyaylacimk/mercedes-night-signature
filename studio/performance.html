@@ -1,1 +1,45 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#08090a"><title>GT Studio · Cihaz Performans Testi | fatihyaylacimk</title><link rel="icon" href="../icon.svg"><link rel="stylesheet" href="performance.css"><script type="module" src="performance.js?v=1"></script></head><body><img id="poster" src="../assets/06_final.webp" alt="Mercedes-AMG GT konsepti"><canvas id="test-canvas" aria-label="Performansı ölçülen Mercedes 3D sahnesi"></canvas><img id="cabin" src="../assets/03_kokpit.webp" alt="" aria-hidden="true"><header><a href="./">← GT Studio</a><span>FATİH YAYLACI · CİHAZ TESTİ</span></header><main><p class="eyebrow">CİHAZINDA ÖLÇÜM</p><h1>3D performans<br><em>testi.</em></h1><p id="status" role="status">Model yüklendikten sonra 3 saniye ısınma ve 30 saniye ölçüm yapılır. Sayfayı açık tut ve test sırasında ekranı döndürme.</p><p class="note">Test; bu tarayıcıdaki kamera, kapı, tekerlek ve ışık hareketlerini ölçer. Cihazın fiziksel telefon olduğunu yazılım tek başına doğrulayamaz. Sonuç bu cihaz, tarayıcı ve seçilen kalite için geçerlidir. Ses kapalıdır.</p><button id="start">Testi başlat</button><button id="stop" hidden>Testi durdur</button><progress id="progress" max="30" value="0" hidden></progress><section id="results" hidden><h2>Ölçüm sonucu</h2><p id="summary"></p><div id="metrics"></div><button id="download">Raporu indir · JSON</button><p class="note">Rapor bu cihazda hazırlanır. Kendiliğinden bir sunucuya gönderilmez. Kullanılan tarayıcı bilgisi rapora eklenir. Bir çalıştırma uzun süreli ısınma ve pil tüketimi testi yerine geçmez.</p></section><p id="failure" role="alert" hidden></p></main></body></html>
+<!doctype html>
+<html lang="tr">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#08090a">
+ <title>Telefon 3D Testi | fatihyaylacimk</title>
+ <link rel="icon" href="../icon.svg">
+ <link rel="stylesheet" href="performance.css?v=2">
+ <script type="module" src="performance.js?v=2" onerror="document.getElementById('boot-note').textContent='Test dosyası yüklenemedi. Bağlantıyı Chrome veya Safari ile yeniden aç.'"></script>
+</head>
+<body>
+ <header><a href="./">← GT Studio</a><span>FATİH YAYLACI · CİHAZ TESTİ</span></header>
+ <div class="layout">
+  <section id="test-stage" aria-label="Araç önizlemesi">
+   <img id="poster" src="../assets/06_final.webp" alt="Siyah Mercedes-AMG GT konsept önizlemesi" fetchpriority="high">
+   <canvas id="test-canvas" aria-label="Performansı ölçülen Mercedes 3D sahnesi"></canvas>
+   <img id="cabin" src="../assets/03_kokpit.webp" alt="" aria-hidden="true">
+   <span class="preview-label">Mercedes-AMG GT · Konsept</span>
+  </section>
+  <main id="test-panel">
+   <p class="eyebrow">TELEFONUNDA ÖLÇ</p>
+   <h1>3D performans <em>testi.</em></h1>
+   <p id="status" role="status">Başlat; model yüklendikten sonra 33 saniye boyunca bu sayfayı açık tut.</p>
+   <p id="boot-note" role="status">Test hazırlanıyor…</p>
+   <div class="actions"><button id="start" disabled>Testi başlat</button><button id="stop" hidden>Testi durdur</button></div>
+   <progress id="progress" max="30" value="0" hidden></progress>
+   <p id="failure" role="alert" hidden></p>
+   <section id="results" hidden>
+    <h2>Ölçüm sonucu</h2><p id="summary"></p><div id="metrics"></div>
+    <button id="download">Raporu indir · JSON</button>
+    <p class="note">Rapor bu cihazda hazırlanır; kendiliğinden sunucuya gönderilmez. Tarayıcı bilgisi rapora eklenir.</p>
+   </section>
+   <details id="test-details">
+    <summary>Test neyi ölçüyor?</summary>
+    <p class="note">Mevcut 3D modelle 3 saniye ısınma ve 30 saniye ölçüm yapılır. Kamera, kapı, tekerlek ve far hareketlerinde FPS ve kare süreleri kaydedilir. Ses kapalıdır.</p>
+    <p class="note">Sekmeyi açık tut. Ekran yönü değişirse ölçüm iptal edilir. Telefonun adres çubuğunun açılıp kapanması testi durdurmaz.</p>
+    <p class="note">Sonuç bu cihaz, tarayıcı ve seçilen kalite için geçerlidir. Tarayıcı fiziksel telefon kimliğini doğrulayamaz. Bu kısa test uzun süreli ısınma ve pil tüketimi testi yerine geçmez.</p>
+   </details>
+   <a class="back-link" href="./">Reklama geri dön ↗</a>
+  </main>
+ </div>
+ <noscript><p class="no-script">Test için JavaScript gerekli. Bu bağlantıyı Chrome veya Safari ile aç.</p></noscript>
+</body>
+</html>

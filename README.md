@@ -73,6 +73,12 @@ Detay seçimi sayfanın gerçek kaydırma konumuyla eşitlenir; sonraki kaydırm
 
 ## Cihazda performans ölçümü
 
-`studio/performance.html` mevcut üretim renderer'ı ile cihaz tarayıcısında 3 saniye ısınma ve 30 saniye rAF kare aralığı ölçümü yapar. Hikâye, 360°/kapı/ışık ve geri kaydırma aşamaları uygulanır. Ortalama FPS, ortanca/%95/en uzun kare süresi ve 50/100 ms üzerindeki kare sayıları JSON olarak cihazda indirilir. WebGL2 yoksa ölçüm sonucu üretilmez. Arka plana geçme, ekran boyutu değişmesi ve bağlam kaybı testi iptal eder.
+`studio/performance.html` mevcut üretim renderer'ı ile cihaz tarayıcısında 3 saniye ısınma ve 30 saniye rAF kare aralığı ölçümü yapar. Hikâye, 360°/kapı/ışık ve geri kaydırma aşamaları uygulanır. Ortalama FPS, ortanca/%95/en uzun kare süresi ve 50/100 ms üzerindeki kare sayıları JSON olarak cihazda indirilir. WebGL2 yoksa ölçüm sonucu üretilmez. Arka plana geçme, ekran yönü/çizim genişliği değişmesi ve bağlam kaybı testi iptal eder. Mobil adres çubuğunun yalnızca ekran yüksekliğini değiştirmesi testi iptal etmez; ölçüm sırasında çizim alanı sabit kalır.
 
 Bu araç fiziksel telefon erişimi sağlamaz. `physical_device_verified:false` raporda özellikle korunur: fiziksel cihaz doğrulaması tarayıcı kullanıcı aracısından çıkarılamaz. Gerçek telefon sonucu, kullanıcı testi telefonda çalıştırdığında oluşur. Bu ortamda bağlı fiziksel Android/iPhone ya da gerçek cihaz test servisi bulunmadığından fiziksel telefon testi yapılmış olarak sunulmaz.
+
+### Mobil test sayfası — görünürlük düzeltmesi
+
+Telefon için kısa adres `test/`; önceki `studio/performance.html` adresi de korunur. İki sayfa aynı HTML kaynağından üretilir: `node tools/sync-performance-page.mjs`. `npm run build` bu eşitlemeyi de yapar. Araç önizlemesi ve test düğmesi normal sayfa akışında gösterilir; uzun teknik açıklamalar açılır bölümdedir. CSS telefon görünümü için `svh` desteğine bağımlı değildir. Test başlarken üretim Studio boyutlarındaki çizim alanı sabitlenir ve rapora bu gerçek ölçüm boyutu kaydedilir.
+
+360×640 ve 393×780 tarayıcı çerçevelerinde başlangıç görselinin yüklendiği, düğmenin ekranın içinde kaldığı ve yatay taşma olmadığı kontrol edildi. Düğmenin alt kenarı sırasıyla 455 ve 500 pikseldi. Bu kontroller fiziksel telefon testi değildir. WebGL olmayan durumda araç önizlemesi ve hata açıklaması görünür kalır; FPS sonucu üretilmez. `npm run check:performance` kare ölçümü, mobil adres çubuğu ve yön değişimi kuralları için 14 kontrol çalıştırır.
