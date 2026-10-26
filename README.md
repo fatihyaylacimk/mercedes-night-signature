@@ -66,3 +66,7 @@ WebGL2 yoksa altı görsellik yedek hikâye açılır. Boya, far ve 360° kontro
 Studio kontrolü: 393×852 iframe görünümünde yatay taşma yok; Türkçe/İngilizce sesler, detay açıklaması, ambiyans ve PNG indirme tarayıcıda doğrulandı. Orijinal ve hafif modellerin her birinde 274 geometri/ses/akış kontrolü geçti. WebGL kapalı test tarayıcısı nedeniyle 3D renk/aydınlatma ve fiziksel telefonda dokunmatik performans görsel olarak doğrulanamadı.
 
 Modeli yeniden sadeleştirmek için `node tools/prepare-mobile.mjs`, hafif modeli doğrulamak için `node tools/check.mjs assets/car-mobile.glb` kullanılır. Sosyal paylaşım kapağı `assets/share-cover.jpg` dosyasındadır.
+
+### Studio geçiş düzeltmeleri
+
+Detay seçimi sayfanın gerçek kaydırma konumuyla eşitlenir; sonraki kaydırma seçilen sahneden devam eder. Mod değiştirirken sürükleme/parmak takibi temizlenir. Sürüş atmosferi gerçek kaydırma hızını izler ve durunca sakinleşir. Model yüklenirken 3D kontroller kapalı kalır; destek durumu yükleme tamamlanınca gösterilir. Jant detayına geçişte sayfa ilerlemesi 0.5900, görsel yedek modda sıfırlama sonrası 0.1400 olarak tarayıcıda doğrulandı. Sonraki doğal kaydırma 0.2734 değerine ilerledi.
