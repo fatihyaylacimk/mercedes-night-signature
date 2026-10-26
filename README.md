@@ -52,3 +52,17 @@ Kontrol tarayıcısında WebGL devre dışıdır. Bu nedenle tarayıcıdaki gör
 3D kaynak: https://github.com/GabrielPedroza/Mercedes-AMG-GT-S-2016 — kaynak README'si MIT lisansı belirtir. Kaynak commit: c7fef03252288ba6b858da2078e6e69a364930a1.
 
 Düzenlemeler: siyah boya, kapı/cam/ayna menteşesi, ayrı jant ve disk grupları, küçültülmüş WebP dokular, Draco yeniden sıkıştırması. Kaynak ve değişiklik bilgileri `assets/model-provenance.json` içindedir. Üçüncü taraf bildirimleri için THIRD_PARTY_NOTICES.md dosyasına bakın.
+
+## İkinci deneyim — GT Studio
+
+İlk deneyim kök adreste korunmuştur. Yeni bölüm `studio/` adresindedir. Ana sayfadaki “02 · GT Studio” bağlantısıyla açılır; Studio içindeki “İlk deneyim” bağlantısıyla geri dönülür.
+
+Studio: siyah/gümüş/kırmızı 3D boya seçimi, sürükleme ve iki parmakla yakınlaşma, klavyeyle 360° inceleme, jant/far/kapı detayları, far kontrolü, kokpit konseptine mor/mavi/amber ambiyans efekti, kişisel PNG indirme, TR/EN seslendirme, destekleyen tarayıcılarda tam ekran ve yerel paylaşım/bağlantı kopyalama. Kokpit ambiyansı sabit konsept görseline uygulanan bir efekttir; fiziksel aracın doğrulanmış donanım simülasyonu değildir.
+
+Telefon genişliğinde veya 4 GB ve altı bildirilen cihaz belleğinde 2.03 MB, 361.617 üçgenli hafif model seçilir; gölgeler ve zemin yansıması azaltılır. Diğer cihazlarda ilk model kullanılır. Modelin referans geometri sayımı 930.300 üçgendir; sadeleştirme öncesi weld işlemi sonrası 930.262 olur. Fiziksel telefon kare hızı ölçülmedi.
+
+WebGL2 yoksa altı görsellik yedek hikâye açılır. Boya, far ve 360° kontrolleri bu modda kapatılır; kokpit ambiyansı, detay açıklamaları ve görsel indirme kullanılabilir. Yedek mod indirmesi açıkça görsel önizleme olarak etiketlenir.
+
+Studio kontrolü: 393×852 iframe görünümünde yatay taşma yok; Türkçe/İngilizce sesler, detay açıklaması, ambiyans ve PNG indirme tarayıcıda doğrulandı. Orijinal ve hafif modellerin her birinde 274 geometri/ses/akış kontrolü geçti. WebGL kapalı test tarayıcısı nedeniyle 3D renk/aydınlatma ve fiziksel telefonda dokunmatik performans görsel olarak doğrulanamadı.
+
+Modeli yeniden sadeleştirmek için `node tools/prepare-mobile.mjs`, hafif modeli doğrulamak için `node tools/check.mjs assets/car-mobile.glb` kullanılır. Sosyal paylaşım kapağı `assets/share-cover.jpg` dosyasındadır.

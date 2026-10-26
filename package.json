@@ -11,9 +11,11 @@
     "three": "0.180.0"
   },
   "devDependencies": {
-    "esbuild": "0.25.11",
     "@gltf-transform/core": "4.2.1",
     "@gltf-transform/extensions": "4.2.1",
-    "draco3dgltf": "1.5.7"
+    "@gltf-transform/functions": "4.2.1",
+    "draco3dgltf": "1.5.7",
+    "esbuild": "0.25.11",
+    "meshoptimizer": "0.24.0"
   }
 }

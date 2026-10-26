@@ -21,3 +21,5 @@ Google Draco geometry decoder. Apache License 2.0. The decoder notice and licens
 Six storyboard keyframes were generated specifically for this project using the built-in image generation tool. Twelve short TR/EN narration clips were generated using AI Voice Generator. Their static copies are shipped with the project; no temporary playback URL is needed at runtime. Sound effects are synthesized by this project's Web Audio code.
 
 Mercedes-Benz and Mercedes-AMG names and marks identify the subject of this independent concept; no endorsement or official commission is asserted.
+
+The Studio mobile model is a simplified derivative of the same credited GT S 2016 source, generated with glTF Transform and meshoptimizer. Node names and door/wheel rig hierarchy are retained.

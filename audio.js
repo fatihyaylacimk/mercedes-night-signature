@@ -18,7 +18,7 @@ export class AudioDirector{
  async speak(scene,direct=false){
   if(!this.enabled||!scene)return;this.currentScene=scene;
   const key=this.lang+scene.id;if(this.active===key&&!direct)return;
-  this.media.pause();this.media.src=`assets/audio/${this.lang}/${scene.id}.mp3`;this.media.load();this.active=key;this.media.volume=.92;
+  this.media.pause();this.media.src=`${this.assetBase||''}assets/audio/${this.lang}/${scene.id}.mp3`;this.media.load();this.active=key;this.media.volume=.92;
   try{await this.media.play();}catch{this.active=null;}
  }
  schedule(scene){this.currentScene=scene;clearTimeout(this.queue);if(!this.enabled)return;this.media.pause();this.active=null;this.queue=setTimeout(()=>this.speak(scene),240);this.cue(scene.id);}

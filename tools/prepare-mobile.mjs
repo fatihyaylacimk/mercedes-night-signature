@@ -1,0 +1,14 @@
+import {NodeIO} from '@gltf-transform/core';
+import {ALL_EXTENSIONS} from '@gltf-transform/extensions';
+import {simplify,weld,prune} from '@gltf-transform/functions';
+import {MeshoptSimplifier} from 'meshoptimizer';
+import draco from 'draco3dgltf';
+import fs from 'node:fs/promises';
+await MeshoptSimplifier.ready;
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'draco3d.decoder':await draco.createDecoderModule(),'draco3d.encoder':await draco.createEncoderModule()});
+const doc=await io.read('assets/car-rig.glb');
+const count=()=>doc.getRoot().listMeshes().reduce((n,m)=>n+m.listPrimitives().reduce((a,p)=>a+p.getIndices().getCount()/3,0),0);
+const before=count();await doc.transform(weld(),simplify({simplifier:MeshoptSimplifier,ratio:.32,error:.0005}),prune());
+await io.write('assets/car-mobile.glb',doc);
+const result={originalTriangles:before,mobileTriangles:count(),mobileBytes:(await fs.stat('assets/car-mobile.glb')).size};
+await fs.writeFile('assets/mobile-model.json',JSON.stringify(result,null,2)+'\n');console.log(result);
