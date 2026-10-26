@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#08090a">
+ <title>Gecenin İmzası | Mercedes-AMG GT — fatihyaylacimk</title>
+ <meta name="description" content="Fatih Yaylacı'nın Mercedes-AMG GT için hazırladığı, kaydırmayla ilerleyen bağımsız reklam konsepti. Türkçe ve İngilizce sinematik web deneyimi.">
+ <meta property="og:title" content="Gecenin İmzası — Mercedes-AMG GT"><meta property="og:description" content="Işık. Karakter. Hareket. Fatih Yaylacı tarafından hazırlanan etkileşimli reklam konsepti.">
+ <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+ <link rel="preload" as="image" href="assets/01_far_acilisi.webp">
+ <script type="module" src="app.js"></script>
+</head>
+<body data-scene="01" data-renderer="loading">
+ <a class="skip" href="#chapters">Sahnelere geç</a>
+ <main id="experience" aria-label="Mercedes-AMG GT etkileşimli reklam konsepti">
+  <div id="stage" aria-hidden="true"><canvas id="cinema"></canvas><canvas id="three-stage"></canvas><img id="cockpit" src="assets/03_kokpit.webp" alt=""><div class="shade"></div></div>
+  <header class="masthead">
+   <a id="home" class="wordmark" href="#scene-01" aria-label="Başlangıca dön"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="3"/><path d="M50 8 46 48 13 74 50 56 87 74 54 48Z" fill="currentColor"/></svg><span>Mercedes-AMG<small>GT COUPÉ</small></span></a>
+   <button id="menu-button" class="menu-button" aria-controls="chapter-menu" aria-expanded="false"><span data-copy="chapters">Sahneler</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span></button>
+  </header>
+  <div id="load-status" class="load-status" role="status">Sahne hazırlanıyor…</div>
+  <section class="story" aria-live="polite" aria-atomic="true">
+   <p class="eyebrow"><span id="eyebrow">BİR GECE YOLCULUĞU</span><span class="chapter-number" id="story-number">01—06</span></p>
+   <h1 id="headline">Gecenin<br><em>imzası.</em></h1>
+   <p id="scene-description" class="scene-description">Işığın izini takip et.</p>
+  </section>
+  <div id="intro-hint" class="intro-hint"><span class="scroll-line"></span><span data-copy="scroll">Keşfetmek için kaydır</span></div>
+  <div id="final-actions" class="final-actions" hidden><a class="cta" id="explore-car" href="https://www.mercedes-amg.com/en/gt-coupe" target="_blank" rel="noopener noreferrer"><span data-copy="explore">Aracı keşfet</span><span aria-hidden="true">↗</span></a><button id="replay" class="text-button" data-copy="replay">Yeniden keşfet</button></div>
+  <footer class="controls">
+   <button id="about-button" class="credit" data-copy="credit">FATİH YAYLACI · KONSEPT</button>
+   <div class="preferences"><div class="language" role="group" aria-label="Dil"><button id="lang-tr" aria-pressed="true" lang="tr">TR</button><span aria-hidden="true">/</span><button id="lang-en" aria-pressed="false" lang="en">EN</button></div><span class="divider"></span><button id="sound" class="sound-button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 4 0 5-4v14l-5-4H3zM16 8q4 4 0 8M19 5q7 7 0 14"/></svg><span id="sound-label">Ses kapalı</span></button></div>
+   <div class="scene-nav"><button id="previous" aria-label="Önceki sahne"><span aria-hidden="true">←</span></button><span id="chapter-counter">01 <i>/ 06</i></span><button id="next" aria-label="Sonraki sahne"><span aria-hidden="true">→</span></button></div>
+  </footer>
+  <div class="progress-track" aria-hidden="true"><div id="progress-fill"></div></div>
+ </main>
+ <div id="scroll-rail" aria-hidden="true"></div>
+ <dialog id="chapter-menu" aria-label="Sahneler"><div class="dialog-top"><span data-copy="chapters">Sahneler</span><button id="menu-close" aria-label="Kapat">×</button></div><nav id="chapters"></nav><p class="menu-caption" data-copy="menuCaption">Bir sahne seç veya kaydırarak ilerle.</p></dialog>
+ <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><span id="about-title" data-copy="aboutTitle">Konsept hakkında</span><button id="about-close" aria-label="Kapat">×</button></div><p data-copy="aboutText">Mercedes-AMG GT için hazırlanmış bağımsız bir görsel ve etkileşim çalışması. Fatih Yaylacı.</p><p id="render-status"></p><p><a href="https://github.com/GabrielPedroza/Mercedes-AMG-GT-S-2016" target="_blank" rel="noopener noreferrer">3D model: GabrielPedroza · MIT</a></p><p data-copy="modelNote">3D hareket kaynağı GT S 2016 modelidir; yüksek detaylı kokpit karesi görsel konsept olarak hazırlanmıştır.</p></dialog>
+ <audio id="narration" preload="none" hidden></audio>
+ <noscript><div class="no-script">Bu deneyim için JavaScript’i etkinleştirin.</div></noscript>
+</body>
+</html>

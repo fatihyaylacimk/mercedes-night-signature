@@ -1,0 +1,85 @@
+{
+  "source": "https://github.com/GabrielPedroza/Mercedes-AMG-GT-S-2016",
+  "source_commit": "c7fef03252288ba6b858da2078e6e69a364930a1",
+  "license_declaration": "Source repository README: MIT",
+  "changes": [
+    "black paint",
+    "separate driver door hinge",
+    "separate wheel pivots; fixed brake calipers",
+    "resized WebP textures",
+    "Draco recompression"
+  ],
+  "door_parts": [
+    "window_F_door_59",
+    "mirror_clear_door_80",
+    "mirror_LED_door_82",
+    "Body_door_109",
+    "Body_door_110",
+    "Body_door_112",
+    "Body_door_114",
+    "Body_door_115",
+    "Body_door_117",
+    "Body_door_119",
+    "Body_door_120"
+  ],
+  "wheel_parts": [
+    "wheel_LR_8",
+    "brake_FL_9",
+    "brake_FR_10",
+    "brake_RL_11",
+    "brake_RR_12",
+    "wheel_RF_28",
+    "wheel_RR_29",
+    "wheel_cap_FL_30",
+    "wheel_cap_FR_31",
+    "wheel_cap_FL_32",
+    "wheel_cap_FR_33",
+    "wheel_cap_FL_34",
+    "wheel_cap_FR_35",
+    "wheel_cap_FL_36",
+    "wheel_cap_FR_37",
+    "wheel_cap_RL_38",
+    "wheel_cap_RR_39",
+    "wheel_cap_RL_40",
+    "wheel_cap_RR_41",
+    "wheel_cap_RL_42",
+    "wheel_cap_RR_43",
+    "wheel_cap_RL_44",
+    "wheel_cap_RR_45",
+    "wheel_LF_46",
+    "tyreLF_87",
+    "tyreLR_88",
+    "tyreRF_89",
+    "tyreRR_90"
+  ],
+  "triangles": 930300,
+  "door_hinge": [
+    -0.6204,
+    0.45,
+    0.7
+  ],
+  "wheel_centers": {
+    "LF": [
+      -1.3755,
+      0.25347,
+      0.71
+    ],
+    "RF": [
+      -1.3755,
+      0.25347,
+      -0.71
+    ],
+    "LR": [
+      0.688,
+      0.26435,
+      0.71
+    ],
+    "RR": [
+      0.688,
+      0.26435,
+      -0.71
+    ]
+  },
+  "output_nodes": 136,
+  "bytes": 3593368
+}

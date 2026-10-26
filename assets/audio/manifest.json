@@ -1,0 +1,98 @@
+[
+  {
+    "language": "tr",
+    "scene": "01",
+    "file": "assets/audio/tr/01.mp3",
+    "transcript": "Bazı izler, ışıkla başlar.",
+    "seconds": 2.016,
+    "bytes": 32256
+  },
+  {
+    "language": "en",
+    "scene": "01",
+    "file": "assets/audio/en/01.mp3",
+    "transcript": "Some signatures begin with light.",
+    "seconds": 2.064,
+    "bytes": 33024
+  },
+  {
+    "language": "tr",
+    "scene": "02",
+    "file": "assets/audio/tr/02.mp3",
+    "transcript": "Her çizgide bir karakter.",
+    "seconds": 1.656,
+    "bytes": 26496
+  },
+  {
+    "language": "en",
+    "scene": "02",
+    "file": "assets/audio/en/02.mp3",
+    "transcript": "Character in every line.",
+    "seconds": 1.584,
+    "bytes": 25344
+  },
+  {
+    "language": "tr",
+    "scene": "03",
+    "file": "assets/audio/tr/03.mp3",
+    "transcript": "Her ayrıntı, sürücü için.",
+    "seconds": 1.824,
+    "bytes": 29184
+  },
+  {
+    "language": "en",
+    "scene": "03",
+    "file": "assets/audio/en/03.mp3",
+    "transcript": "Every detail, designed around you.",
+    "seconds": 2.088,
+    "bytes": 33408
+  },
+  {
+    "language": "tr",
+    "scene": "04",
+    "file": "assets/audio/tr/04.mp3",
+    "transcript": "Hareket, bir hisle başlar.",
+    "seconds": 1.656,
+    "bytes": 26496
+  },
+  {
+    "language": "en",
+    "scene": "04",
+    "file": "assets/audio/en/04.mp3",
+    "transcript": "Motion begins with a feeling.",
+    "seconds": 1.8,
+    "bytes": 28800
+  },
+  {
+    "language": "tr",
+    "scene": "05",
+    "file": "assets/audio/tr/05.mp3",
+    "transcript": "Mühendislik. Zarafet. Hareket.",
+    "seconds": 1.752,
+    "bytes": 28032
+  },
+  {
+    "language": "en",
+    "scene": "05",
+    "file": "assets/audio/en/05.mp3",
+    "transcript": "Engineering. Elegance. Motion.",
+    "seconds": 1.776,
+    "bytes": 28416
+  },
+  {
+    "language": "tr",
+    "scene": "06",
+    "file": "assets/audio/tr/06.mp3",
+    "transcript": "Gecenin imzası.",
+    "seconds": 1.056,
+    "bytes": 16896
+  },
+  {
+    "language": "en",
+    "scene": "06",
+    "file": "assets/audio/en/06.mp3",
+    "transcript": "Signature of the night.",
+    "seconds": 1.32,
+    "bytes": 21120
+  }
+]
