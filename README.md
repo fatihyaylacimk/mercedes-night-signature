@@ -70,3 +70,9 @@ Modeli yeniden sadeleştirmek için `node tools/prepare-mobile.mjs`, hafif model
 ### Studio geçiş düzeltmeleri
 
 Detay seçimi sayfanın gerçek kaydırma konumuyla eşitlenir; sonraki kaydırma seçilen sahneden devam eder. Mod değiştirirken sürükleme/parmak takibi temizlenir. Sürüş atmosferi gerçek kaydırma hızını izler ve durunca sakinleşir. Model yüklenirken 3D kontroller kapalı kalır; destek durumu yükleme tamamlanınca gösterilir. Jant detayına geçişte sayfa ilerlemesi 0.5900, görsel yedek modda sıfırlama sonrası 0.1400 olarak tarayıcıda doğrulandı. Sonraki doğal kaydırma 0.2734 değerine ilerledi.
+
+## Cihazda performans ölçümü
+
+`studio/performance.html` mevcut üretim renderer'ı ile cihaz tarayıcısında 3 saniye ısınma ve 30 saniye rAF kare aralığı ölçümü yapar. Hikâye, 360°/kapı/ışık ve geri kaydırma aşamaları uygulanır. Ortalama FPS, ortanca/%95/en uzun kare süresi ve 50/100 ms üzerindeki kare sayıları JSON olarak cihazda indirilir. WebGL2 yoksa ölçüm sonucu üretilmez. Arka plana geçme, ekran boyutu değişmesi ve bağlam kaybı testi iptal eder.
+
+Bu araç fiziksel telefon erişimi sağlamaz. `physical_device_verified:false` raporda özellikle korunur: fiziksel cihaz doğrulaması tarayıcı kullanıcı aracısından çıkarılamaz. Gerçek telefon sonucu, kullanıcı testi telefonda çalıştırdığında oluşur. Bu ortamda bağlı fiziksel Android/iPhone ya da gerçek cihaz test servisi bulunmadığından fiziksel telefon testi yapılmış olarak sunulmaz.
