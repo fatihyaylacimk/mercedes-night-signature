@@ -1,0 +1,416 @@
+[
+  {
+    "file": "assets/car-rig.glb",
+    "bytes": 3593368,
+    "triangles": 930262,
+    "nodes": 136,
+    "meshes": 130,
+    "materials": 92,
+    "animations": [],
+    "namedPartHints": {
+      "door": [
+        "DriverDoorPivot",
+        "window_F_door_59",
+        "mirror_clear_door_80",
+        "mirror_LED_door_82",
+        "Body_door_109",
+        "Body_door_110",
+        "Body_door_112",
+        "Body_door_114",
+        "Body_door_115",
+        "Body_door_117",
+        "Body_door_119",
+        "Body_door_120"
+      ],
+      "trunk": [],
+      "interior": []
+    },
+    "paintCandidates": [
+      {
+        "material": "マテリアル.029",
+        "triangles": 10839,
+        "meshNames": [
+          "Body_door_109",
+          "Body_door_110",
+          "Body_111"
+        ],
+        "baseColor": [
+          0.018,
+          0.02,
+          0.024,
+          1
+        ],
+        "metallic": 0.82,
+        "roughness": 0.22,
+        "clearcoat": 5,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.300",
+        "triangles": 102081,
+        "meshNames": [
+          "Body_door_112",
+          "Body_113"
+        ],
+        "baseColor": [
+          0.8000000715255737,
+          0.34420815110206604,
+          0,
+          1
+        ],
+        "metallic": 0.6318181753158569,
+        "roughness": 0.34545454382896423,
+        "clearcoat": 5,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.030",
+        "triangles": 16898,
+        "meshNames": [
+          "Body_door_114",
+          "Body_door_115",
+          "Body_116"
+        ],
+        "baseColor": [
+          0.018,
+          0.02,
+          0.024,
+          1
+        ],
+        "metallic": 0.82,
+        "roughness": 0.22,
+        "clearcoat": 5,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.024",
+        "triangles": 14602,
+        "meshNames": [
+          "Body_door_117",
+          "Body_118"
+        ],
+        "baseColor": [
+          0.018,
+          0.02,
+          0.024,
+          1
+        ],
+        "metallic": 0.82,
+        "roughness": 0.22,
+        "clearcoat": 0,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.027",
+        "triangles": 112,
+        "meshNames": [
+          "Body_door_119",
+          "Body_door_120",
+          "Body_121"
+        ],
+        "baseColor": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 0,
+        "clearcoat": 0,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.031",
+        "triangles": 454,
+        "meshNames": [
+          "Body_122"
+        ],
+        "baseColor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 0.3499999940395355,
+        "clearcoat": 0,
+        "textured": true
+      }
+    ],
+    "invalidClearcoat": [
+      {
+        "material": "マテリアル.010",
+        "value": 3,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.029",
+        "value": 5,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.300",
+        "value": 5,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.030",
+        "value": 5,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.213",
+        "value": 3,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.200",
+        "value": 3,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.194",
+        "value": 3,
+        "allowed": [
+          0,
+          1
+        ]
+      }
+    ],
+    "review": {
+      "status": "manual-review-required",
+      "message": "Names and counts are inventory, not approval. Inspect actual exterior, cockpit, door lining and trunk geometry.",
+      "vehicleIdentityVerified": false,
+      "interiorQualityVerified": false,
+      "trunkInteriorVerified": false,
+      "cameraClearanceVerified": false,
+      "phoneRenderingVerified": false,
+      "publicationPermissionVerified": false
+    }
+  },
+  {
+    "file": "assets/car-mobile.glb",
+    "bytes": 2032108,
+    "triangles": 361306,
+    "nodes": 136,
+    "meshes": 130,
+    "materials": 92,
+    "animations": [],
+    "namedPartHints": {
+      "door": [
+        "DriverDoorPivot",
+        "window_F_door_59",
+        "mirror_clear_door_80",
+        "mirror_LED_door_82",
+        "Body_door_109",
+        "Body_door_110",
+        "Body_door_112",
+        "Body_door_114",
+        "Body_door_115",
+        "Body_door_117",
+        "Body_door_119",
+        "Body_door_120"
+      ],
+      "trunk": [],
+      "interior": []
+    },
+    "paintCandidates": [
+      {
+        "material": "マテリアル.029",
+        "triangles": 6266,
+        "meshNames": [
+          "Body_door_109",
+          "Body_door_110",
+          "Body_111"
+        ],
+        "baseColor": [
+          0.018,
+          0.02,
+          0.024,
+          1
+        ],
+        "metallic": 0.82,
+        "roughness": 0.22,
+        "clearcoat": 5,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.300",
+        "triangles": 32664,
+        "meshNames": [
+          "Body_door_112",
+          "Body_113"
+        ],
+        "baseColor": [
+          0.8000000715255737,
+          0.34420815110206604,
+          0,
+          1
+        ],
+        "metallic": 0.6318181753158569,
+        "roughness": 0.34545454382896423,
+        "clearcoat": 5,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.030",
+        "triangles": 8962,
+        "meshNames": [
+          "Body_door_114",
+          "Body_door_115",
+          "Body_116"
+        ],
+        "baseColor": [
+          0.018,
+          0.02,
+          0.024,
+          1
+        ],
+        "metallic": 0.82,
+        "roughness": 0.22,
+        "clearcoat": 5,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.024",
+        "triangles": 4955,
+        "meshNames": [
+          "Body_door_117",
+          "Body_118"
+        ],
+        "baseColor": [
+          0.018,
+          0.02,
+          0.024,
+          1
+        ],
+        "metallic": 0.82,
+        "roughness": 0.22,
+        "clearcoat": 0,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.027",
+        "triangles": 112,
+        "meshNames": [
+          "Body_door_119",
+          "Body_door_120",
+          "Body_121"
+        ],
+        "baseColor": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 0,
+        "clearcoat": 0,
+        "textured": false
+      },
+      {
+        "material": "マテリアル.031",
+        "triangles": 266,
+        "meshNames": [
+          "Body_122"
+        ],
+        "baseColor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 0.3499999940395355,
+        "clearcoat": 0,
+        "textured": true
+      }
+    ],
+    "invalidClearcoat": [
+      {
+        "material": "マテリアル.010",
+        "value": 3,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.029",
+        "value": 5,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.300",
+        "value": 5,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.030",
+        "value": 5,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.213",
+        "value": 3,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.200",
+        "value": 3,
+        "allowed": [
+          0,
+          1
+        ]
+      },
+      {
+        "material": "マテリアル.194",
+        "value": 3,
+        "allowed": [
+          0,
+          1
+        ]
+      }
+    ],
+    "review": {
+      "status": "manual-review-required",
+      "message": "Names and counts are inventory, not approval. Inspect actual exterior, cockpit, door lining and trunk geometry.",
+      "vehicleIdentityVerified": false,
+      "interiorQualityVerified": false,
+      "trunkInteriorVerified": false,
+      "cameraClearanceVerified": false,
+      "phoneRenderingVerified": false,
+      "publicationPermissionVerified": false
+    }
+  }
+]
