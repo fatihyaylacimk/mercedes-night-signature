@@ -75,6 +75,14 @@ Detay seçimi sayfanın gerçek kaydırma konumuyla eşitlenir; sonraki kaydırm
 
 `studio/performance.html` mevcut üretim renderer'ı ile cihaz tarayıcısında 3 saniye ısınma ve 30 saniye rAF kare aralığı ölçümü yapar. Hikâye, 360°/kapı/ışık ve geri kaydırma aşamaları uygulanır. Ortalama FPS, ortanca/%95/en uzun kare süresi ve 50/100 ms üzerindeki kare sayıları JSON olarak cihazda indirilir. WebGL2 yoksa ölçüm sonucu üretilmez. Arka plana geçme, ekran yönü/çizim genişliği değişmesi ve bağlam kaybı testi iptal eder. Mobil adres çubuğunun yalnızca ekran yüksekliğini değiştirmesi testi iptal etmez; ölçüm sırasında çizim alanı sabit kalır.
 
+### Studio 03 — siyah boya ve sade kontroller
+
+`studio/` dört gerçek gövde malzemesinin tamamını renklendirir; eski altın malzeme ve geçersiz clearcoat değerleri ayrı `car-black.glb` / `car-black-mobile.glb` dosyalarında düzeltilmiştir. Önceki model dosyaları değiştirilmez. Studio 02 aynı dosyalarıyla `studio-v2/` altında korunur; ilk deneyim kök adreste kalır.
+
+Kontroller başlangıçta kapalı yerel bir menüdedir. Modlar, ses ve dil görünür kalır. Araç işaretlerinin dokunma alanı 44 pikseldir, görünen işaret 20 pikseldir ve yalnızca ilgili sahnede gösterilir. Kamera kadrajı yatay ve dikey alanı hesaba katar. Telefon testi artık `studio-5` renderer'ını ve yüklenen gerçek model dosyası adını raporlar.
+
+Model hazırlama: `node tools/prepare-black-studio.mjs`. Malzeme ve kaynak dosya koruma kontrolü: `node tools/check-black-studio.mjs`. Sayısal/rig kontrolleri görsel kalite veya fiziksel telefon testi yerine geçmez. Bu sürümde araç hâlâ GT S 2016'dır; kokpit konsept görselidir. C192 ve gerçek bagaj için uygun model dosyası gereklidir.
+
 Bu araç fiziksel telefon erişimi sağlamaz. `physical_device_verified:false` raporda özellikle korunur: fiziksel cihaz doğrulaması tarayıcı kullanıcı aracısından çıkarılamaz. Gerçek telefon sonucu, kullanıcı testi telefonda çalıştırdığında oluşur. Bu ortamda bağlı fiziksel Android/iPhone ya da gerçek cihaz test servisi bulunmadığından fiziksel telefon testi yapılmış olarak sunulmaz.
 
 ### Mobil test sayfası — görünürlük düzeltmesi

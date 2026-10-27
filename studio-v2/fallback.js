@@ -1,0 +1,9 @@
+import {SCENES} from './scenes.js';
+import {smooth,mix} from './timeline.js';
+export class CinemaRenderer{
+ constructor(canvas,onReady){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});this.images=new Map();this.onReady=onReady;this.lastState=null;this.load(0).then(()=>{this.resize();onReady?.();});}
+ async load(i){if(i<0||i>=6)return null;if(this.images.has(i))return this.images.get(i);const pending=new Promise(resolve=>{const im=new Image();im.onload=()=>{this.images.set(i,im);resolve(im);if(this.lastState)this.render(this.lastState);};im.onerror=()=>resolve(null);im.src=SCENES[i].file;});this.images.set(i,pending);return pending;}
+ resize(){this.w=this.canvas.clientWidth||innerWidth;this.h=this.canvas.clientHeight||innerHeight;const d=Math.min(devicePixelRatio||1,1.5);this.canvas.width=Math.round(this.w*d);this.canvas.height=Math.round(this.h*d);this.ctx.setTransform(d,0,0,d,0,0);if(this.lastState)this.render(this.lastState);}
+ draw(index,local,alpha){const im=this.images.get(index);if(!(im instanceof HTMLImageElement))return;const c=this.ctx;let scale=Math.min(this.w/im.width,this.h/im.height);if(this.w/this.h>.8)scale=this.h/im.height;const zoom=1+local*.018;const w=im.width*scale*zoom,h=im.height*scale*zoom,x=(this.w-w)/2,y=(this.h-h)/2-local*3;c.globalAlpha=alpha;c.drawImage(im,x,y,w,h);c.globalAlpha=1;}
+ render(state){this.lastState=state;const c=this.ctx;if(!c)return;c.fillStyle='#08090a';c.fillRect(0,0,this.w,this.h);const i=state.index;this.load(i);this.load(i+1);this.load(i-1);this.draw(i,state.local,1);if(state.blend>0&&i<5)this.draw(i+1,0,state.blend);if(state.p<.08){c.fillStyle=`rgba(0,0,0,${.93*(1-smooth(0,.08,state.p))})`;c.fillRect(0,0,this.w,this.h);}if(this.w/this.h>.85){const g=c.createLinearGradient(this.w*.35,0,this.w*.80,0);g.addColorStop(0,'rgba(8,9,10,.76)');g.addColorStop(.4,'rgba(8,9,10,.1)');g.addColorStop(1,'rgba(8,9,10,0)');c.fillStyle=g;c.fillRect(0,0,this.w,this.h);}}
+}

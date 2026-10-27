@@ -1,0 +1,91 @@
+{
+  "vehicle": "Mercedes-AMG GT S 2016",
+  "sourceModel": "assets/model-provenance.json",
+  "note": "Material correction of existing model; no C192, detailed cockpit or trunk added.",
+  "variants": [
+    {
+      "source": "assets/car-rig.glb",
+      "output": "assets/car-black.glb",
+      "sourceSha256": "26f86f0b637a8bdd247df660a3862b905da1562deb324eeeccc8fc6f8104951f",
+      "bytes": 3588652,
+      "paintMaterials": [
+        "マテリアル.029",
+        "マテリアル.300",
+        "マテリアル.030",
+        "マテリアル.024"
+      ],
+      "repairedClearcoat": [
+        {
+          "material": "マテリアル.010",
+          "previous": 3
+        },
+        {
+          "material": "マテリアル.029",
+          "previous": 5
+        },
+        {
+          "material": "マテリアル.300",
+          "previous": 5
+        },
+        {
+          "material": "マテリアル.030",
+          "previous": 5
+        },
+        {
+          "material": "マテリアル.213",
+          "previous": 3
+        },
+        {
+          "material": "マテリアル.200",
+          "previous": 3
+        },
+        {
+          "material": "マテリアル.194",
+          "previous": 3
+        }
+      ]
+    },
+    {
+      "source": "assets/car-mobile.glb",
+      "output": "assets/car-black-mobile.glb",
+      "sourceSha256": "e56c0af29c966934586341cde67afbe4223a359203a9643293227c330230cee4",
+      "bytes": 2031912,
+      "paintMaterials": [
+        "マテリアル.029",
+        "マテリアル.300",
+        "マテリアル.030",
+        "マテリアル.024"
+      ],
+      "repairedClearcoat": [
+        {
+          "material": "マテリアル.010",
+          "previous": 3
+        },
+        {
+          "material": "マテリアル.029",
+          "previous": 5
+        },
+        {
+          "material": "マテリアル.300",
+          "previous": 5
+        },
+        {
+          "material": "マテリアル.030",
+          "previous": 5
+        },
+        {
+          "material": "マテリアル.213",
+          "previous": 3
+        },
+        {
+          "material": "マテリアル.200",
+          "previous": 3
+        },
+        {
+          "material": "マテリアル.194",
+          "previous": 3
+        }
+      ]
+    }
+  ]
+}

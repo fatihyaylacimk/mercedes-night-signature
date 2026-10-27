@@ -23,3 +23,5 @@ Six storyboard keyframes were generated specifically for this project using the 
 Mercedes-Benz and Mercedes-AMG names and marks identify the subject of this independent concept; no endorsement or official commission is asserted.
 
 The Studio mobile model is a simplified derivative of the same credited GT S 2016 source, generated with glTF Transform and meshoptimizer. Node names and door/wheel rig hierarchy are retained.
+
+The black Studio models (`car-black.glb`, `car-black-mobile.glb`) correct all four body-paint materials and out-of-range clearcoat values from those existing derivatives. They retain the same source attribution and geometry. The earlier Studio and original model files remain available. These material changes do not add a C192 model, detailed interior, or trunk mechanism.
