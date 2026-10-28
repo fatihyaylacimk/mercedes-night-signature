@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "node tools/dev-server.mjs",
     "build": "node tools/build.mjs",
     "check": "node tools/check.mjs",
+    "check:signature": "node tools/check-signature.mjs",
     "check:performance": "node tools/check-performance.mjs"
   },
   "dependencies": {

@@ -1,0 +1,28 @@
+{
+  "created": "2026-10-28",
+  "purpose": "Independent visual atmosphere concepts; not model-accurate product or equipment representations.",
+  "generation": "Built-in image generation; reference is the existing project image assets/06_final.webp.",
+  "files": [
+    {
+      "path": "signature/assets/night.webp",
+      "source": "exec-3a54db57-1883-4e4a-be96-505b2cee3a4d.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "9787d00084b4cd393e58e98e74128e98fa0b66cbc320f4d552f8225be2a8fb46"
+    },
+    {
+      "path": "signature/assets/studio.webp",
+      "source": "exec-a3cb6db7-0aaa-47a2-afd1-de37234f2ca9.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "2234c018e9049f39a993f679fa90baec5fea3bdeb86dc8c958eec9da92a21837"
+    },
+    {
+      "path": "signature/assets/sunset.webp",
+      "source": "exec-6e9964c7-d732-4b26-a037-bb923a336bd5.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "13d2d40879a6a0ffeee5ed447225180db2f690b6505d986479b8862861d97a50"
+    }
+  ]
+}

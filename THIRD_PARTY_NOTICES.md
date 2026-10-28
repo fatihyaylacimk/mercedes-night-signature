@@ -25,3 +25,7 @@ Mercedes-Benz and Mercedes-AMG names and marks identify the subject of this inde
 The Studio mobile model is a simplified derivative of the same credited GT S 2016 source, generated with glTF Transform and meshoptimizer. Node names and door/wheel rig hierarchy are retained.
 
 The black Studio models (`car-black.glb`, `car-black-mobile.glb`) correct all four body-paint materials and out-of-range clearcoat values from those existing derivatives. They retain the same source attribution and geometry. The earlier Studio and original model files remain available. These material changes do not add a C192 model, detailed interior, or trunk mechanism.
+
+## Signature Experience atmosphere images
+
+`signature/assets/night.webp`, `studio.webp` and `sunset.webp` were generated for this independent concept with the built-in image-generation tool, using the existing campaign image as a visual reference. They are separate photographic concepts, not photographs of the credited 2016 3D model or representations of actual stock-vehicle equipment. Local WebP derivatives and their hashes are recorded in `signature/assets/provenance.json`. The new 3D renderer adapts the existing GT Studio renderer and preserves the same model and third-party attributions.
