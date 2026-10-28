@@ -2,3 +2,5 @@ node_modules/
 source-assets/
 *.log
 .DS_Store
+
+qa-evidence/

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080b0f">
+  <title>Gecenin Sahibi Sensin · Signature Experience</title>
+  <meta name="description" content="Kendi imzanı bırak. Mercedes-AMG GT için Fatih Yaylacı tarafından hazırlanan kişisel, etkileşimli prömiyer konsepti.">
+  <meta property="og:title" content="Gecenin Sahibi Sensin · Signature Experience">
+  <meta property="og:description" content="Bir otomobil. Üç atmosfer. Senin imzan. Bağımsız etkileşimli Mercedes-AMG konsepti.">
+  <meta property="og:image" content="https://fatihyaylacimk.github.io/mercedes-night-signature/assets/share-cover.jpg">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="signature.css">
+  <link rel="preload" href="assets/night.webp" as="image">
+  <script type="module" src="app.js"></script>
+</head>
+<body data-atmosphere="night" data-screen="intro" data-renderer="photo" data-chapter="0">
+  <a class="skip-link" href="#name">Kişiselleştirmeye geç</a>
+  <main class="experience" id="experience" aria-label="Kişisel otomobil prömiyeri">
+    <div class="visual">
+      <img id="poster" src="assets/night.webp" alt="" fetchpriority="high">
+      <img id="detail-image" src="../assets/03_kokpit.webp" alt="" hidden>
+      <canvas id="vehicle" aria-label="Mercedes-AMG GT S 2016 üç boyutlu araç" tabindex="-1" aria-hidden="true"></canvas>
+      <div class="reveal-veil" id="reveal-veil"></div>
+    </div>
+
+    <header class="masthead">
+      <button class="author quiet" id="about-open" aria-haspopup="dialog">FATİH YAYLACI <span>BAĞIMSIZ KONSEPT</span></button>
+      <a class="brand" href="../studio/" aria-label="GT Studio'ya dön">Mercedes-AMG<small>SIGNATURE EXPERIENCE</small></a>
+      <div class="header-actions">
+        <button class="quiet" id="sound" aria-pressed="false"><span data-i18n="soundOff">Ses kapalı</span></button>
+        <button class="language quiet" id="language" aria-label="Switch to English">EN</button>
+      </div>
+    </header>
+
+    <section class="editorial" aria-labelledby="headline">
+      <p class="eyebrow" id="eyebrow">SANA ÖZEL BİR PRÖMİYER</p>
+      <h1 id="headline"><span id="line-one">Gecenin sahibi.</span><em id="line-two">Sensin.</em></h1>
+      <p class="description" id="description">Bir otomobil. Üç atmosfer.<br>Geriye senin imzan kalır.</p>
+
+      <form id="welcome-form" class="welcome-form">
+        <label for="name" data-i18n="nameLabel">Adın veya baş harflerin</label>
+        <div class="name-field"><input id="name" name="name" maxlength="24" autocomplete="given-name" placeholder="Örn. Fatih" aria-describedby="name-note"><span data-i18n="optional">İSTEĞE BAĞLI</span></div>
+        <p class="name-note" id="name-note" data-i18n="nameNote">İmzanı bu cihazda hatırlarız.</p>
+        <button class="primary launch" type="submit"><span id="start-label">Deneyimi başlat</span><span class="button-meta" aria-hidden="true">00:45</span></button>
+      </form>
+
+      <div class="scene-actions" id="scene-actions" hidden>
+        <button class="primary" id="play-toggle">Duraklat</button>
+        <button class="secondary" id="explore-toggle">Adım adım keşfet</button>
+      </div>
+      <div class="orbit-actions" id="orbit-actions" hidden>
+        <p class="orbit-hint" data-i18n="orbitHint">Döndürmek için aracı sürükle. Yaklaşmak için iki parmağını kullan.</p>
+        <div class="inline-actions">
+          <button class="secondary" id="door-toggle" aria-pressed="false" data-i18n="openDoor">Kapıyı aç</button>
+          <button class="secondary" id="light-toggle" aria-pressed="true" data-i18n="lightsOn">Farlar açık</button>
+        </div>
+        <div class="inline-actions zoom-actions"><button class="quiet" id="zoom-in" data-i18n="zoomIn">Yaklaş</button><button class="quiet" id="zoom-out" data-i18n="zoomOut">Uzaklaş</button><button class="quiet" id="reset-view" data-i18n="resetView">Açıyı sıfırla</button></div>
+      </div>
+      <div class="final-actions" id="final-actions" hidden>
+        <button class="primary" id="download" data-i18n="download">İmzamı indir</button>
+        <button class="secondary" id="share" data-i18n="share">Bağlantıyı paylaş</button>
+        <div class="inline-actions"><button class="quiet" id="replay" data-i18n="replay">Yeniden keşfet</button><button class="quiet" id="edit-name" data-i18n="editName">İmzamı değiştir</button></div>
+      </div>
+    </section>
+
+    <div class="visual-caption" id="visual-caption"><span class="caption-line"></span><span id="visual-label">Mercedes-AMG GT · Konsept</span></div>
+    <div class="mode-caption"><span id="render-label">Görsel deneyim</span><button class="quiet" id="finish" data-i18n="skipToFinal" hidden>İmzama geç</button></div>
+
+    <footer class="bottom-bar">
+      <div class="premiere-note" id="premiere-note"><span>01 / 03</span><p data-i18n="premiereNote">SENİN ANIN.<br>SENİN ATMOSFERİN.</p></div>
+      <nav class="chapters" id="chapters" aria-label="Deneyim sahneleri" tabindex="-1" hidden></nav>
+      <fieldset class="atmospheres"><legend data-i18n="atmosphere">ATMOSFERİNİ SEÇ</legend><div class="atmosphere-options">
+        <button type="button" data-atmosphere="night" aria-pressed="true" data-i18n="night">Gece</button>
+        <button type="button" data-atmosphere="studio" aria-pressed="false" data-i18n="studio">Showroom</button>
+        <button type="button" data-atmosphere="sunset" aria-pressed="false" data-i18n="sunset">Gün batımı</button>
+      </div></fieldset>
+    </footer>
+    <div class="playback-track" id="playback-track" hidden><span id="playback-progress"></span></div>
+    <span class="clock" id="clock" hidden aria-hidden="true">00:00 / 00:45</span>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <dialog id="about-dialog" aria-labelledby="about-title">
+    <div class="dialog-heading"><p class="eyebrow" data-i18n="aboutEyebrow">ÇALIŞMANIN ARDINDA</p><button class="quiet close-dialog" data-i18n="close">Kapat</button></div>
+    <h2 id="about-title" data-i18n="aboutTitle">Bir otomobilden<br>kişisel bir hikâyeye.</h2>
+    <p data-i18n="aboutCopy">Fatih Yaylacı tarafından hazırlanan bağımsız bir tasarım ve etkileşim konsepti. Mercedes-Benz veya bir yetkili bayi tarafından sunulan resmî bir hizmet değildir.</p>
+    <p data-i18n="modelCopy">Üç boyutlu araç kaynağı Mercedes-AMG GT S 2016 modelidir. Kokpit ve ortam fotoğrafları ayrı görsel konseptlerdir; gerçek araç donanımını temsil etmez.</p>
+    <p class="render-explanation" id="render-explanation"></p>
+    <div class="about-links"><a href="../studio/" data-i18n="previousStudio">GT Studio'yu aç</a><a href="../THIRD_PARTY_NOTICES.md" data-i18n="credits">Kaynaklar ve katkılar</a></div>
+    <button class="secondary" id="forget" data-i18n="forget">Kişisel tercihlerimi sıfırla</button>
+  </dialog>
+
+  <dialog id="share-dialog" aria-labelledby="share-title">
+    <div class="dialog-heading"><p class="eyebrow" data-i18n="yourSignature">SENİN İMZAN</p><button class="quiet close-dialog" data-i18n="close">Kapat</button></div>
+    <h2 id="share-title" data-i18n="shareTitle">Hikâyeni yanında taşı.</h2>
+    <p data-i18n="shareCopy">Bu bağlantı adını, seçtiğin atmosferi ve bulunduğun sahneyi içerir. İstediğin kişiyle paylaşabilirsin.</p>
+    <label for="share-url" data-i18n="shareLabel">Kişisel deneyim bağlantısı</label><input id="share-url" type="url" readonly>
+    <button class="primary" id="copy-link" data-i18n="copyLink">Bağlantıyı kopyala</button>
+  </dialog>
+  <audio id="narration" preload="none" hidden></audio>
+  <noscript><div class="no-script">Bu etkileşimli deneyim için JavaScript'i etkinleştir. <a href="../">Görsel reklama dön.</a></div></noscript>
+</body>
+</html>

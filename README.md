@@ -2,6 +2,12 @@
 
 Fatih Yaylacı tarafından hazırlanan bağımsız etkileşimli reklam konsepti. Aşama 02: çalışan mobil web prototipi.
 
+## Signature Experience — Gecenin Sahibi Sensin
+
+Yeni kişisel prömiyer `signature/` yolundadır: isim veya baş harflerle karşılama, altı sahnelik 45 saniyelik akış, gece/showroom/gün batımı atmosferleri, kişisel PNG kartı ve tercihleri koruyan paylaşım bağlantısı. Destekleyen tarayıcılarda mevcut GT S 2016 modeli serbest incelenebilir; diğerlerinde görsel deneyim çalışır. Kokpit ayrı bir konsept görselidir. Ayrıntılar ve sınırlar: [signature/README.md](signature/README.md).
+
+Yerel önizleme: `npm run dev -- --host 0.0.0.0 --port 4173 --strictPort`. Yeni akış kontrolleri: `npm run check:signature`.
+
 ## Kullanım
 
 Sayfayı kaydırın. Kamera otomobilin etrafında dolaşır, sürücü kapısı açılır, jantlar döner ve tünel sahnesine geçilir. Yukarı kaydırma görsel hareketi aynı yoldan geri götürür. TR / EN dil seçimi, kullanıcı kontrollü ses ve altı sahnelik menü bulunur. Ses başlangıçta kapalıdır.
